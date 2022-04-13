@@ -1,0 +1,34 @@
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit()" class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Sign up</p>
+
+    <div class="form-row mb-4">
+        <div class="col">
+            <input type="text" formControlName="firstName" id="sFirstName" class="form-control"
+                placeholder="First name">
+        </div>
+        <div class="col">
+            <input type="text" formControlName="lastName" id="sLastName" class="form-control"
+                placeholder="Last name">
+        </div>
+    </div>
+    <div class="form-row mb-4">
+        <div class="col">
+            <input type="email" formControlName="email" id="sEmail" class="form-control mb-4"
+                placeholder="E-mail"></div>
+        <div class="col"><input type="password" formControlName="password" id="sPass"
+                class="form-control mb-4" placeholder="password"></div>
+    </div>
+    <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+
+    <hr>
+
+</form>
+
+<p>{{msg}}</p>
+
+<div *ngIf="isError">
+    <p>First name: {{firstName}} </p>
+    <p>Last name:{{lastName}} </p>
+    <p>Email: {{email}}</p>
+</div>
